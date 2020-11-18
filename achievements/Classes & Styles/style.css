@@ -1,0 +1,60 @@
+body {
+    background-color: #333333;
+    text-align: center;
+  }
+
+.blue {
+    color: #0000FF;
+    font-size: 20px;
+    transition: all 0.6s;
+}
+
+.blue:hover {
+    color: #0404B4;
+    font-size: 24px;
+}
+
+.red {
+    color: #FF0000;
+    font-size: 15px;
+    transition: all 0.4s;
+}
+
+.red:hover {
+    color: #8A0808;
+    font-size: 14.5px;
+}
+
+.orange {
+    color: #DF7401;
+    font-size: 17px;
+    transition: all 0.5s;
+    font-weight: bold;
+}
+
+.orange:hover {
+    color: #FAAC58;
+    font-size: 20px;
+}
+
+.green {
+    color: #00FF40;
+    font-size: 18px;
+    transition: all 0.6s;
+}
+
+.green:hover {
+    color: #21610B;
+    font-size: 21px;
+}
+
+.yellow {
+    color: #FFFF00;
+    font-size: 14px;
+    transition: all 0.6s;
+}
+
+.yellow:hover {
+    color: #AEB404;
+    font-size: 16.5px;
+}

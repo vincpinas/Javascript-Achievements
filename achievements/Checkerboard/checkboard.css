@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+table {
+    border: solid 1px black;
+    width: 60vw;
+    height: 100vh;
+}
+
+.black {
+    border: solid 1px black;
+    color: black;
+    background-color: black;
+}
+
+.white {
+    border: solid 1px black;
+    color: white;
+    background-color: white;
+}
