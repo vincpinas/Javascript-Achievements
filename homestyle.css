@@ -4,6 +4,10 @@ li a {
     font-size: 16px;
 }
 
+.backlink {
+    color: rgb(214, 214, 214);
+}
+
 li a:hover {
     color: orange;
     font-size: 18px;
