@@ -11,7 +11,8 @@ e = setInterval(updateTime,1000) //code zorgt dat de update time functie elke se
 function updateTime(){
     d = new Date()
      p.innerHTML = "Break Time from "+breakStart.toTimeString()+" until " +breakEnd.toTimeString()+"<br/> Time: "+d.getHours() +" : "+ d.getMinutes() +" : "+ d.getSeconds()
-     if (d >= 14 && d <= 15) {
+    console.log(d.getMinutes());
+     if (d.getMinutes() >= 7 && d.getMinutes() < 8) {
          breakNow();
      } else {
         endBreak();
