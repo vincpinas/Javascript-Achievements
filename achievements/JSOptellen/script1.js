@@ -40,6 +40,8 @@
         delen.innerHTML = antwoord;
         if (!antwoord) {
             delen.innerHTML = "door 0 kan niet, geef een ander getal."
-
+        }
+        if (getal2 == 0){
+            delen.innerHTML = "door 0 kan niet, geef een ander getal."
         }
     }
