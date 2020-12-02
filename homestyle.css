@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 li a {
     text-decoration: underline;
+    font-style: oblique;
     transition: all 0.4s;
     font-size: 16px;
 }
 
 .backlink {
-    color: rgb(214, 214, 214);
+    color: rgb(221, 221, 221);
 }
 
 li a:hover {
@@ -14,5 +22,5 @@ li a:hover {
 }
 
 h1, h2, p, a, li {
-    color: rgb(214, 214, 214);
+    color: rgb(238, 238, 238);
 }
