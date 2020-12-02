@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>document.title - Les4</title>
+        <script src="extern.js"></script>
+        <script>
+            alert("Where is DOM? I can't find him!");
+        </script>
+    </head>
+    <body>
+    <h1>Goodmorning..</h1>    
+    <p id="greet">...</p>
+    <script>
+        document.title = "Hoi DOM ik ben niet DOM!"
+    </script>
+    <script>
+        document.getElementById('greet').textContent = "Hi i'm DOM!"
+    </script>
+    <input type="button" value = "find me inside" onclick="function inline(){
+        document.getElementById('greet').textContent = 'Thank you for using the DOM inline!';
+    }inline();">
+    </input>
+    <input type="button" value = "Find me outside" onclick="clickedMe()"></input>
+    <input type="button" value = "Click to Change Title!" onclick="TitleChange()"></button>
+    <input type="button" value = "Change Title Back!" onclick="changeBack()"></button>
+    </body>
+</html>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    input {
+        margin: 5px 0px 5px 0px;
+        font-size: 13px;
+        padding: 10px 15px;
+        border: solid 1px rgb(43, 43, 43);
+        color: white;
+        background-color: rgb(29, 29, 29);
+        transition: all 0.4s ease 0s;
+    }
+    input:hover {
+        font-size: 15px;
+        color: orange;
+    }
+</style>
