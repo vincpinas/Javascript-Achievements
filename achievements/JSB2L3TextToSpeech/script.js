@@ -4,7 +4,8 @@
     let myButton = document.getElementById('myButton');
     let myReset = document.getElementById('myReset');
     let myChange = document.getElementById('myChange');
-    let pitch = randompitch();
+    let titletext = document.getElementById('titletext');
+    let titlsubmit = document.getElementById('titlesubmit');
 
     myButton.addEventListener('click', function(){
         main();
@@ -16,24 +17,26 @@
 
     })
 
+    titlesubmit.addEventListener('click', () => {
+        document.title = titletext.value;
+    })
+
     function main(){
          let dezeTextWordtHet = makeThisSentence();
          myText.innerHTML = dezeTextWordtHet;
-         sayItLoud(dezeTextWordtHet, pitch); // say something nice say it loud
+         sayItLoud(dezeTextWordtHet); // say something nice say it loud
          selectThisImage(); // show a nice image
     }
     
-    
-    
+     
     function randomizer(range = 1){ 
         // Math.random geeft een waarde  0 <= waarde < 1 (dus exclusief 1)
         return Math.floor((Math.random() * range));
     }
 
-    function randompitch(){ 
-        let max = 1.5
-        let min = 0.1
-        return Math.random() * (+max + 1 - +min) + +min;
+    function randompitch(range = 2){ 
+        // Math.random geeft een waarde  0 <= waarde < 1 (dus exclusief 1)
+        return (Math.random() * range);
     }
     
     function makeThisSentence(){
@@ -52,11 +55,11 @@
         myImage.src = plaatjes[index]; 
     }
     
-    function sayItLoud (textString, pitch) {
+    function sayItLoud (textString) {
       let message = new SpeechSynthesisUtterance(textString);
       let voices = window.speechSynthesis.getVoices();
       message.voice = voices[0];
-      message.pitch = 1; // range between 0 and 2
+      message.pitch = randompitch(); // range between 0 and 2
       message.rate = 1; // range between 0.1 (lowest) and 10 (highest) 
       window.speechSynthesis.speak(message);
     }
