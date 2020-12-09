@@ -6,6 +6,7 @@
     let myChange = document.getElementById('myChange');
     let titletext = document.getElementById('titletext');
     let titlsubmit = document.getElementById('titlesubmit');
+    let messagepitch = 1
 
     myButton.addEventListener('click', function(){
         main();
@@ -59,13 +60,13 @@
       let message = new SpeechSynthesisUtterance(textString);
       let voices = window.speechSynthesis.getVoices();
       message.voice = voices[0];
-      message.pitch = randompitch(); // range between 0 and 2
+      message.pitch = messagepitch; // range between 0 and 2
       message.rate = 1; // range between 0.1 (lowest) and 10 (highest) 
       window.speechSynthesis.speak(message);
     }
     
     myChange.addEventListener('click', () => {
-        randompitch();
+        messagepitch = randompitch();
     });
     
     
