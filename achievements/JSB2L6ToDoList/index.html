@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+    <header>
+        <div class="eventbuttons">
+            <button id="AddToDo"><i class="fas fa-plus"></i></button>
+            <button id="RemoveToDo"><i class="fas fa-minus"></i></button>
+            <button id="FinishToDo"><i class="fas fa-check"></i></button>
+        </div>
+        <div class="inputevent">
+            <input type="text" placeholder="type your text here" id="inputField"></input>
+        </div>
+    </header>
+    <h1>To Do List</h1>
+    <section class="container">
+        <ul class="to-dos" id="toDoContainer">
+
+        </ul>
+    </section>
+    <div class="popUpAlert">
+        <p>Something went wrong... <br>Perhaps you should try filling in the input field <br>before trying to perform an action?</p>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
