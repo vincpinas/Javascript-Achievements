@@ -101,6 +101,12 @@ h1 {
     list-style-type: none;
 }
 
+#toDoContainer li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .popUpAlert {
     display: flex;
     flex-direction: column;
@@ -118,7 +124,7 @@ h1 {
     z-index: 5;
     overflow: hidden;
     font-size: 14px;
-    transition: all .5s ease 0s;
+    transition: all .9s ease 0s;
 }
 
 .popUpAlert p {

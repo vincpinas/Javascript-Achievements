@@ -26,7 +26,7 @@ AddToDo.addEventListener('click', () => {
 
 // Removing a To Do.
 RemToDo.addEventListener('click', () => {
-    if (isNaN(inputField.value) == false) {
+    if (inputField.value.length > 0 && isNaN(inputField.value) == false) {
         try {
             deleteItem()
         } catch(e) {
@@ -43,6 +43,10 @@ RemToDo.addEventListener('click', () => {
 // Finishing a To Do.
 FinToDo.addEventListener('click', () => {
     FinishItem()
+
+    if (inputField.value.length == 0) {
+        Alert()
+    }
 });
 
 
@@ -65,7 +69,6 @@ function deleteItem() {
 function FinishItem() {
     let ParsedInt = parseInt(inputField.value)
     let index = ParsedInt - 1
-    toDoItems[index].style.color = 'red'
     updateList()
 }
 
