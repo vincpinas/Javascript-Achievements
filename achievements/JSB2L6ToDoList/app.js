@@ -97,8 +97,7 @@ function FinishItem() {
     let sliced = toDoItems.slice(index, index+1);
     let newVer = sliced.toString()
     let replace = newVer.innerHTML = "<span style='color:green'>" + newVer + "</span>";
-    toDoItems.push(replace)
-    deleteItem()
+    toDoItems.insert(index, replace)
     updateList()
 }
 
@@ -111,7 +110,14 @@ async function Alert() {
     alertText.innerHTML = "Something went wrong... <br>Perhaps you should try filling in the input field <br>before trying to perform an action?"
 }
 
+// -------------------------------------------------------------------------
+// Functies van het internet genomen
 // Sleep Function
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+
+// Array Insert
+Array.prototype.insert = function ( index, item ) {
+    this.splice( index, 1, item );
+};
