@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    color: white;
+}
+
+body {
+    background-color: rgb(19, 19, 19);
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+#maand,
+#jaar {
+    margin-left: 5px;
+}
