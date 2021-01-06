@@ -1,0 +1,90 @@
+@keyframes newQuestion {
+  from {opacity: 0;}
+  to{opacity: 100;}
+}
+body{
+  background-color: rgb(39, 39, 39);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font: 1em sans-serif;
+}
+.wrapper{
+  overflow: hidden;
+  width: 80%;
+  margin: auto;
+  border: 2px solid rgb(213, 213, 213);
+  border-radius: 5px;
+  background-color: rgb(28, 28, 28);
+}
+.quizTitle {
+  color: rgb(167, 167, 167);
+}
+.myQuestion  {
+  color: gray;
+  font-size: 1.4em;
+}
+.myQuestion::first-letter{
+  color: rgb(204, 204, 204);
+}
+.questionBox, .resultBox {
+  padding: 20px;
+  width: 80%;
+  margin-left:0px;
+}
+
+.resultBox {
+  height: 40vh;
+}
+
+.resultBox h3 {
+  width: 50%;
+}
+
+.questionBox-new{
+  padding: 20px;
+  width: 80%;
+  margin-left:0px;
+  animation-name: newQuestion;
+  animation-duration: 4s;
+}
+
+.myAnswer{
+  width: 80%;
+  text-align: center;
+}
+.answer{
+  list-style-type: none;
+  padding: 10px;
+  background-color:rgb(230, 230, 230);
+  border:2px solid rgb(119, 119, 119);
+  border-radius: 12px;
+  margin: 15px;
+  transition: all .6s;
+}
+.answer:hover{
+  background-color: rgb(22, 22, 22);
+  color: white;
+  cursor: pointer;
+}
+.right {
+  padding: 10px;
+  color:white;
+  border:2px solid black;
+  border-radius: 12px;
+  margin: 5px;
+  background-color: green;
+  animation-name: goodAnswerAnimation;
+  animation-duration: 4s;
+}
+.wrong{
+  padding: 10px;
+  color:rgb(228, 228, 228);
+  border:2px solid black;
+  border-radius: 12px;
+  margin: 5px;
+  background-color: rgb(157, 11, 11);
+  animation-name: wrongAnswerAnimation;
+  animation-duration: 4s;
+}
