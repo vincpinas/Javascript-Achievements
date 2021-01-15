@@ -1,4 +1,4 @@
-const delayTime = 2000; // wachttijd voor de volgende vraag
+const delayTime = 1000; // wachttijd voor de volgende vraag
 const myQuestion = document.getElementById('myQuestion');
 const myAnswer = document.getElementById('myAnswer');
 const quizWrapper = document.getElementById('quizWrapper');
@@ -6,18 +6,29 @@ const questionBox = document.getElementById('questionBox');
 const resultBox = document.getElementById('resultBox');
 const quizTitle = document.getElementById('quizTitle');
 
-let done = 0
 let counter = 0; // aantal mutliple choice vragen
 let quiz; // object met quiz vragen
 let playerData = {}; // object, hierin worden de game gegevens opgeslagen
+let quizNummer = 1;
 
-function init(quiznumber){
-    quiz = quiznumber; // kies de quiz
-    //quiz = quiz2; // kies de quiz
-    initQuiz(); // start de quiz
+function init(){
+  if (quiz == null) {
+    quiz = quiz1;
+  } else if (quiz == quiz1) {
+    quiz = quiz2;
+  } else {
+    quiz = null
+  }
+  if (quiz != null) {
+    initQuiz();
+  }
+  console.log(quiz)
 }
 
 function initQuiz(){
+  questionBox.style.display = "block"; // reset alle player game variabelen
+  resultBox.style.display = "none"; // reset alle player game variabelen
+  counter = 0; // reset alle player game variabelen
   playerData.goodAnswers = 0; // reset alle player game variabelen
   playerData.wrongAnswers = 0; // reset alle player game variabelen
   playerName = ""; // toekomstige uitbreiding naam speler opvragen
@@ -75,27 +86,21 @@ function evaluate(evt) {
   setTimeout(prepareQuestions, delayTime); // wacht 2 seconden voor nieuwe vraag
 }
 
+
 function finishQuiz() {
   // afsluiting quiz geef feedback
   questionBox.style.display = "none";
   resultBox.style.display = "block";
   quizWrapper.style.background = "silver";
-  done + 1
-  if (playerData.goodAnswers > playerData.wrongAnswers) {
+  if (quiz == quiz1 && playerData.goodAnswers > playerData.wrongAnswers) {
     resultBox.innerHTML = "<h3> Je bent een goede match voor het LAM, het zal je zeker goed doen om het LAM te bezoeken.</h3>";
-    let quizImage = "https://image.shutterstock.com/image-vector/drop-water-icon-editable-vector-260nw-1316707091.jpg"
-    quizWrapper.style.backgroundImage = "url("+ quizImage + ")";
-    quizWrapper.style.backgroundRepeat = "no-repeat"; // image positioneren
-    quizWrapper.style.backgroundPosition = "right 50px"; // image positioneren
-    quizWrapper.style.backgroundSize = "25%"; // image positioneren
-  } else if (playerData.wrongAnswers > playerData.goodAnswers) {
+  } else if (quiz == quiz1 && playerData.wrongAnswers > playerData.goodAnswers) {
     resultBox.innerHTML = "<h3> Helaas heb je een groot deel van de vragen fout beantwoord, maar een tripje naar het LAM zou nog steeds heel leuk zijn!</h3>"
-    let quizImage = "https://image.shutterstock.com/image-vector/fishing-hook-icon-editable-vector-600w-1310933129.jpg"
-    quizWrapper.style.backgroundImage = "url("+ quizImage + ")";
-    quizWrapper.style.backgroundRepeat = "no-repeat"; // image positioneren
-    quizWrapper.style.backgroundPosition = "right"; // image positioneren
-    quizWrapper.style.backgroundSize = "40%"; // image positioneren
+  } else {
+    resultBox.innerHTML = "<h2>Jouw resultaat <br>goede antwoorden " + playerData.goodAnswers + "<br>foute antwoorden " + playerData.wrongAnswers + "</h2>";
   }
+
+  setTimeout(init, delayTime);
 }
 
-init(quiz1); // start it
+init(); // start it
