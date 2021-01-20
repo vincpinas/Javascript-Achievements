@@ -39,12 +39,12 @@ function activateVoice(alpha, beta, gamma){
     if(alpha > 120){
         let myTxt = "Stop rotating me you cretin.";  
         sayItLoud(myTxt);
-        document.getElementById('voice').innerHTML = myTxt;
+        document.getElementById('voice').innerHTML = MyTxt;
         }
     else if (alpha < 120 && gamma > 70) {
         let MyTxt = "Okay, you better stop.";
         sayItLoud(MyTxt);
-        document.getElementById('voice').innerHTML = myTxt;
+        document.getElementById('voice').innerHTML = MyTxt;
     }
     else{
         // haal de tekst weg
@@ -56,7 +56,7 @@ function showMyImage(alpha, beta, gamma){
     // image if X-axis > value
     if(beta > 60){
         document.getElementById('myImage').src = "pop-smoke-shootforthestarsaimforthemoon-cover.jpg"; // show image
-        } else if (beta => 20 && beta <= 80) {
+        } else if (beta >= 20 && beta <= 59) {
             document.getElementById('myImage').src = "logo.jpg";
         }
         else {
